@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>MAXAMED | Link in Bio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ffd900",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#121212",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-button {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+        .glass-button:hover {
+            background: rgba(255, 217, 0, 0.08);
+            border-color: #ffd900;
+            box-shadow: 0 0 20px rgba(255, 217, 0, 0.2);
+            transform: translateY(-2px);
+        }
+        .profile-glow {
+            box-shadow: 0 0 30px rgba(255, 217, 0, 0.15);
+        }
+        .bg-radial-gradient {
+            background: radial-gradient(circle at center, #23200f 0%, #121212 70%);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white min-h-screen">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden bg-radial-gradient">
+<!-- Main Layout Container -->
+<div class="layout-container flex h-full grow flex-col items-center">
+<div class="w-full max-w-[640px] px-6 py-12 flex flex-col items-center">
+<!-- ProfileHeader Component -->
+<div class="flex flex-col items-center gap-6 mb-12">
+<div class="relative">
+<div class="absolute inset-0 rounded-full border-2 border-primary animate-pulse opacity-50"></div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-32 w-32 border-4 border-primary profile-glow relative z-10" data-alt="Professional portrait of MAXAMED smiling" style='background-image: url("https://i.ibb.co/21J6qtTh/Screenshot-20251130-154934-Tik-Tok.jpg");'>
+</div>
+</div>
+<div class="flex flex-col items-center text-center space-y-2">
+<h1 class="text-white text-4xl font-bold tracking-tight">MAXAMED</h1>
+<p class="text-primary/80 text-lg font-light tracking-wide">Graphic Designer &amp; Programmer | Somalia</p>
+</div>
+</div>
+<!-- ActionsBar (Social Quick Links) -->
+<div class="w-full mb-10">
+<div class="grid grid-cols-4 gap-4">
+<a class="group flex flex-col items-center gap-2 py-3 rounded-2xl hover:bg-white/5 transition-all" href="#">
+<div class="rounded-full bg-white/5 group-hover:bg-primary/20 p-3 transition-colors">
+<span class="material-symbols-outlined text-white group-hover:text-primary transition-colors">share</span>
+</div>
+<p class="text-white/60 text-xs font-medium group-hover:text-white transition-colors">LinkedIn</p>
+</a>
+<a class="group flex flex-col items-center gap-2 py-3 rounded-2xl hover:bg-white/5 transition-all" href="https://www.tiktok.com/@moohan318?_r=1&_t=ZS-93XTzJFQG1M">
+<div class="rounded-full bg-white/5 group-hover:bg-primary/20 p-3 transition-colors">
+<span class="material-symbols-outlined text-white group-hover:text-primary transition-colors">brand_awareness</span>
+</div>
+<p class="text-white/60 text-xs font-medium group-hover:text-white transition-colors">TikTok</p>
+</a>
+<a class="group flex flex-col items-center gap-2 py-3 rounded-2xl hover:bg-white/5 transition-all" href="https://telegram.org/dl">
+<div class="rounded-full bg-white/5 group-hover:bg-primary/20 p-3 transition-colors">
+<span class="material-symbols-outlined text-white group-hover:text-primary transition-colors">code</span>
+</div>
+<p class="text-white/60 text-xs font-medium group-hover:text-white transition-colors">telegram</p>
+</a>
+<a class="group flex flex-col items-center gap-2 py-3 rounded-2xl hover:bg-white/5 transition-all" href="https://wa.me/+252 907 228 218">
+<div class="rounded-full bg-white/5 group-hover:bg-primary/20 p-3 transition-colors">
+<span class="material-symbols-outlined text-white group-hover:text-primary transition-colors">chat</span>
+</div>
+<p class="text-white/60 text-xs font-medium group-hover:text-white transition-colors">WhatsApp</p>
+</a>
+</div>
+</div>
+<!-- ButtonGroup Component (Main Links) -->
+<div class="w-full flex flex-col gap-4">
+<a class="glass-button flex items-center justify-between overflow-hidden rounded-full h-16 px-8 w-full group" href="#">
+<span class="text-white text-lg font-medium tracking-wide">View My Portfolio</span>
+<span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 transition-opacity">arrow_forward</span>
+</a>
+<a class="glass-button flex items-center justify-between overflow-hidden rounded-full h-16 px-8 w-full group" href="#">
+<span class="text-white text-lg font-medium tracking-wide">Connect on WhatsApp</span>
+<span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 transition-opacity">send</span>
+</a>
+<a class="glass-button flex items-center justify-between overflow-hidden rounded-full h-16 px-8 w-full group" href="#">
+<span class="text-white text-lg font-medium tracking-wide">Follow me on TikTok</span>
+<span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 transition-opacity">video_library</span>
+</a>
+<a class="glass-button flex items-center justify-between overflow-hidden rounded-full h-16 px-8 w-full group" href="#">
+<span class="text-white text-lg font-medium tracking-wide">Visit my GitHub</span>
+<span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 transition-opacity">terminal</span>
+</a>
+</div>
+<!-- Footer Component -->
+<footer class="mt-16 w-full flex flex-col items-center gap-8">
+<div class="flex items-center justify-center gap-8">
+<a class="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-widest font-medium" href="#">Privacy</a>
+<div class="h-1 w-1 bg-white/20 rounded-full"></div>
+<a class="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-widest font-medium" href="#">Terms</a>
+<div class="h-1 w-1 bg-white/20 rounded-full"></div>
+<a class="text-white/40 hover:text-primary transition-colors text-sm uppercase tracking-widest font-medium" href="#">Contact</a>
+</div>
+<div class="flex flex-col items-center gap-4">
+<p class="text-white/30 text-xs font-medium tracking-widest uppercase">© 2024 MAXAMED · SOMALIA</p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-white/20 hover:text-primary cursor-pointer transition-colors">language</span>
+<span class="material-symbols-outlined text-white/20 hover:text-primary cursor-pointer transition-colors">mail</span>
+<span class="material-symbols-outlined text-white/20 hover:text-primary cursor-pointer transition-colors">brush</span>
+</div>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</body></html>
