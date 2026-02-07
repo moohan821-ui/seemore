@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Personal Bio Link Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "primary": "#197fe6",
+                "background-light": "#f6f7f8",
+                "background-dark": "#111921",
+                "sage-muted": "#e2e8e4",
+                "cream-soft": "#fdfbf7"
+              },
+              fontFamily: {
+                "display": ["Plus Jakarta Sans", "sans-serif"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .custom-glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+        }
+        .dark .custom-glass {
+            background: rgba(17, 25, 33, 0.7);
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body class="bg-cream-soft dark:bg-background-dark min-h-screen transition-colors duration-300">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden font-display">
+<div class="layout-container flex h-full grow flex-col items-center">
+<!-- Main Content Wrapper -->
+<div class="px-4 flex flex-1 justify-center py-12 w-full max-w-[640px]">
+<div class="layout-content-container flex flex-col w-full">
+<!-- Profile Header Section -->
+<div class="flex p-4 @container flex-col items-center animate-fade-in">
+<div class="flex w-full flex-col gap-6 items-center">
+<div class="flex gap-6 flex-col items-center">
+<!-- Avatar with subtle border -->
+<div class="relative">
+<div class="absolute inset-0 rounded-full border-4 border-white dark:border-gray-800 shadow-xl"></div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full min-h-40 w-40 relative z-10" data-alt="Professional headshot of a smiling young creator" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuATOtZjpK7hZTlb9rOEi1fN_DqaFFK8nOEM5hMYpf6t7_4pC9wWdchRlUf0dmIBoGzQqaox_nDgJzfPHBqovCXQf5fG43dZnwriLfhm5rdv72A8bQ65K3mvPApe6TpGQd3BV2Ugq1hIIDJqmE-O1-g9w7Zaq7GiVlFgSwDsisPZSnM7WsJ8XX8SS1DkFHK4STszING8IdmtAYY5OgkI8CYCbw4PYcKkmIMQtCy8oWBKFb9Cv8Wj7OjIRZ3Txr0kDTvP2lhu1-rrFnk");'>
+</div>
+</div>
+<div class="flex flex-col items-center justify-center space-y-2">
+<h1 class="text-[#111418] dark:text-white text-3xl font-bold leading-tight tracking-[-0.015em] text-center">
+                                    Alex Rivera
+                                </h1>
+<p class="text-[#637588] dark:text-gray-400 text-lg font-normal leading-relaxed text-center max-w-[450px]">
+                                    Digital Creator &amp; Brand Strategist helping you build a calm, high-impact online presence.
+                                </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Action Links -->
+<div class="flex justify-center mt-6">
+<div class="flex flex-1 gap-4 flex-col items-stretch px-4 py-3 w-full">
+<!-- Secondary Platform Link -->
+<a class="group flex min-w-[84px] cursor-pointer items-center justify-between overflow-hidden rounded-xl h-16 px-6 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 text-[#111418] dark:text-white text-lg font-semibold transition-all hover:shadow-md hover:bg-sage-muted/30 dark:hover:bg-gray-700/50" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-400">video_library</span>
+<span class="truncate">TikTok</span>
+</div>
+<span class="material-symbols-outlined text-gray-400 group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+<!-- Secondary Platform Link -->
+<a class="group flex min-w-[84px] cursor-pointer items-center justify-between overflow-hidden rounded-xl h-16 px-6 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 text-[#111418] dark:text-white text-lg font-semibold transition-all hover:shadow-md hover:bg-sage-muted/30 dark:hover:bg-gray-700/50" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-400">chat</span>
+<span class="truncate">WhatsApp</span>
+</div>
+<span class="material-symbols-outlined text-gray-400 group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+<!-- Secondary Platform Link -->
+<a class="group flex min-w-[84px] cursor-pointer items-center justify-between overflow-hidden rounded-xl h-16 px-6 bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 text-[#111418] dark:text-white text-lg font-semibold transition-all hover:shadow-md hover:bg-sage-muted/30 dark:hover:bg-gray-700/50" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-400">language</span>
+<span class="truncate">Official Website</span>
+</div>
+<span class="material-symbols-outlined text-gray-400 group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+<!-- Primary Deep-Dive Link (Know more about me) -->
+<div class="mt-4">
+<a class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-16 px-5 bg-primary text-white text-lg font-bold leading-normal tracking-[0.015em] w-full shadow-lg shadow-primary/20 hover:brightness-110 transition-all active:scale-[0.98]" href="#">
+<span class="truncate">Know more about me</span>
+<span class="material-symbols-outlined ml-2">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Secondary Social Icons Row -->
+<div class="mt-8 @container">
+<div class="gap-4 px-4 flex justify-center flex-wrap">
+<!-- Instagram -->
+<a class="flex flex-col items-center gap-2 group" href="#">
+<div class="rounded-full bg-white dark:bg-gray-800 p-3.5 shadow-sm border border-gray-100 dark:border-gray-700 group-hover:bg-primary group-hover:text-white transition-all">
+<div class="text-[#111418] dark:text-white group-hover:text-white" data-icon="InstagramLogo">
+<svg fill="currentColor" height="24px" viewbox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160ZM176,24H80A56.06,56.06,0,0,0,24,80v96a56.06,56.06,0,0,0,56,56h96a56.06,56.06,0,0,0,56-56V80A56.06,56.06,0,0,0,176,24Zm40,152a40,40,0,0,1-40,40H80a40,40,0,0,1-40-40V80A40,40,0,0,1,80,40h96a40,40,0,0,1,40,40ZM192,76a12,12,0,1,1-12-12A12,12,0,0,1,192,76Z"></path>
+</svg>
+</div>
+</div>
+<p class="text-[#637588] dark:text-gray-400 text-xs font-medium uppercase tracking-wider">Instagram</p>
+</a>
+<!-- Twitter -->
+<a class="flex flex-col items-center gap-2 group" href="#">
+<div class="rounded-full bg-white dark:bg-gray-800 p-3.5 shadow-sm border border-gray-100 dark:border-gray-700 group-hover:bg-primary group-hover:text-white transition-all">
+<div class="text-[#111418] dark:text-white group-hover:text-white" data-icon="TwitterLogo">
+<svg fill="currentColor" height="24px" viewbox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M247.39,68.94A8,8,0,0,0,240,64H209.57A48.66,48.66,0,0,0,168.1,40a46.91,46.91,0,0,0-33.75,13.7A47.9,47.9,0,0,0,120,88v6.09C79.74,83.47,46.81,50.72,46.46,50.37a8,8,0,0,0-13.65,4.92c-4.31,47.79,9.57,79.77,22,98.18a110.93,110.93,0,0,0,21.88,24.2c-15.23,17.53-39.21,26.74-39.47,26.84a8,8,0,0,0-3.85,11.93c.75,1.12,3.75,5.05,11.08,8.72C53.51,229.7,65.48,232,80,232c70.67,0,129.72-54.42,135.75-124.44l29.91-29.9A8,8,0,0,0,247.39,68.94Zm-45,29.41a8,8,0,0,0-2.32,5.14C196,166.58,143.28,216,80,216c-10.56,0-18-1.4-23.22-3.08,11.51-6.25,27.56-17,37.88-32.48A8,8,0,0,0,92,169.08c-.47-.27-43.91-26.34-44-96,16,13,45.25,33.17,78.67,38.79A8,8,0,0,0,136,104V88a32,32,0,0,1,9.6-22.92A30.94,30.94,0,0,1,167.9,56c12.66.16,24.49,7.88,29.44,19.21A8,8,0,0,0,204.67,80h16Z"></path>
+</svg>
+</div>
+</div>
+<p class="text-[#637588] dark:text-gray-400 text-xs font-medium uppercase tracking-wider">Twitter</p>
+</a>
+<!-- LinkedIn -->
+<a class="flex flex-col items-center gap-2 group" href="#">
+<div class="rounded-full bg-white dark:bg-gray-800 p-3.5 shadow-sm border border-gray-100 dark:border-gray-700 group-hover:bg-primary group-hover:text-white transition-all">
+<div class="text-[#111418] dark:text-white group-hover:text-white" data-icon="LinkedinLogo">
+<svg fill="currentColor" height="24px" viewbox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
+<path d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"></path>
+</svg>
+</div>
+</div>
+<p class="text-[#637588] dark:text-gray-400 text-xs font-medium uppercase tracking-wider">LinkedIn</p>
+</a>
+</div>
+</div>
+<!-- Footer Section -->
+<footer class="flex flex-col gap-6 px-5 py-12 text-center">
+<div class="h-[1px] w-1/3 bg-gray-200 dark:bg-gray-700 mx-auto"></div>
+<div class="flex flex-wrap items-center justify-center gap-8 @[480px]:flex-row">
+<a class="text-[#637588] dark:text-gray-400 text-sm font-medium hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-[#637588] dark:text-gray-400 text-sm font-medium hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="text-[#637588] dark:text-gray-400 text-sm font-medium hover:text-primary transition-colors" href="#">Collaborate</a>
+</div>
+<p class="text-[#637588] dark:text-gray-500 text-sm font-normal">© 2024 Alex Rivera. All rights reserved.</p>
+</footer>
+</div>
+</div>
+</div>
+</div>
+</body></html>
