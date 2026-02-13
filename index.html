@@ -178,22 +178,33 @@
   // 3. Shaqada Login-ka (Sign In)
   // Waxaan raadinaynaa Form-ka Login-ka
   const loginForm = document.querySelector('form'); // Maadaama uu hal form yahay
-  
-  loginForm.addEventListener('submit', (e) => {
+    // 3. Shaqada Login-ka (Nidaamka rasmiga ah ee Ammaanka)
+  loginForm.addEventListener('submit', async (e) => { // Waxaan ku darnay async
     e.preventDefault();
 
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
-    // Hubi Google Cloud
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
+    try {
+        // 1. Sug inta Google ay ka xaqiijinayso xogta
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        
+        // 2. Haddii ay sax tahay, farriin sii
         alert("Hambalyo! Si guul leh ayaad u soo gashay.");
-        window.location.href = "index.html"; // Halkan u wareeji boggaaga weyn
-      })
-      .catch((error) => {
-        alert("Cillad: Email-ka ama Password-ka ayaa khaldan!");
-      });
+        
+        // 3. Markaas ka dib u wareeji bogga Home (index.html)
+        window.location.href = "index.html"; 
+
+    } catch (error) {
+        // Haddii password-ku khaldan yahay ama email-ku uusan jirin
+        let message = "Email-ka ama Password-ka ayaa khaldan!";
+        if (error.code === 'auth/network-request-failed') {
+            message = "Internet-kaaga ayaa daciif ah!";
+        }
+        alert("Cillad: " + message);
+    }
+  });
+  
   });
 
   // 4. Shaqada Isha (Toggle Password)
