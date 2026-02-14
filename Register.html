@@ -177,7 +177,6 @@
 
   // 3. Marka qofku rixo batoonka "Create Account"
   const registrationForm = document.getElementById('registrationForm');
-  
   registrationForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
@@ -185,24 +184,26 @@
     const password = document.getElementById('password').value;
     const confirmPassword = document.getElementById('confirm-password').value;
 
-    // Hubi haddii password-yadu is leeyihiin
+    // 1. Hubi haddii password-yadu is leeyihiin
     if (password !== confirmPassword) {
-      alert("Fadlan iska hubi, baasboorka isma laha!");
-      return;
+        alert("Fadlan iska hubi, baasboorka isma laha!");
+        return;
     }
 
-    // U dir xogta Google Cloud
+    // 2. U dir xogta Google Firebase
     createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        alert("Hambalyo! Ciwaankaaga waxaa lagu kaydiyay Internet-ka. Taleefan kasta hadda waad kaga soo geli kartaa.");
-        registrationForm.reset();
-      })
-      .catch((error) => {
-        // Haddii email-ku hore u jiray ama cilad kale dhacdo
-        alert("Cillad: " + error.message);
-      });
-  });
-
+        .then((userCredential) => {
+            // CADAYN: Farriintan waxay muujinaysaa in xogta gacanta lagu dhigay
+            alert("Hambalyo! Ciwaankaaga si guul leh ayaa loogu kaydiyay nidaamka. ✅");
+            
+            // GUDBIN: Hadda u kaxee bogga Home-ka (index.html)
+            window.location.href = "https://moohan821-ui.github.io/seemore/index.html"; 
+        })
+        .catch((error) => {
+            // Haddii email-ku hore u jiray ama cillad kale dhacdo
+            alert("Cillad: " + error.message);
+        });
+});
   // 4. Koodka Isha (Toggle Password) - Isna halkan geli
   const togglePassword = document.querySelector('#togglePassword');
   const passwordInput = document.querySelector('#password');
