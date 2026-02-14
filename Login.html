@@ -95,7 +95,7 @@
 <h2 class="text-3xl font-bold text-background-dark dark:text-white mb-2">Welcome Back</h2>
 <p class="text-background-dark/50 dark:text-white/50">Enter your details to access your account</p>
 </div>
-<form id="loginForm" action="https://moohan821-ui.github.io/seemore/index.html" class="space-y-6">
+<form id="loginForm" action="#" class="space-y-6">
 <div class="space-y-2">
 <label class="text-sm font-semibold text-background-dark/70 dark:text-white/70 ml-1" for="email">Email Address</label>
 <div class="relative group">
@@ -177,7 +177,7 @@
 
   // 3. Shaqada Login-ka (Sign In)
   // Waxaan raadinaynaa Form-ka Login-ka
-  const loginForm = document.querySelector('form'); // Maadaama uu hal form yahay
+const loginForm = document.getElementById('loginForm'); // Maadaama uu hal form yahay
     // 3. Shaqada Login-ka (Nidaamka rasmiga ah ee Ammaanka)
   loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
