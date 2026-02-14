@@ -65,7 +65,7 @@
 <p class="text-stone-500 dark:text-stone-400">Start your journey to glowing skin today.</p>
 </div>
 <!-- Registration Form -->
-<form id="registrationForm" action="https://moohan821-ui.github.io/seemore/index.html">
+ <form id="registrationForm" action="#" class="...">
 <!-- Full Name Field -->
 <div class="space-y-1.5">
 <label class="text-sm font-semibold text-stone-700 dark:text-stone-300 ml-1" for="full-name">Full Name</label>
@@ -170,7 +170,6 @@
     appId: "1:34681878474:web:5d11bb422bf74008cdc133",
     measurementId: "G-YCBEM6VPDD"
   };
-
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
@@ -178,31 +177,29 @@
 registrationForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    // 3. Shaqada Register-ka (Sign Up)
+const registerForm = document.getElementById('registrationForm'); // Hubi inuu la mid yahay ID-ga HTML-ka
+
+registerForm.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Jooji in URL-ku iskiis u cararo
+
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
-    const confirmPassword = document.getElementById('confirm-password').value;
-
-    // 1. Hubi haddii labada password ay is leeyihiin
-    if (password !== confirmPassword) {
-        alert("Cillad: Labada Password isma laha! ❌");
-        return;
-    }
 
     try {
-        // 2. KALIYA halkan ayaa xogta loogu dirayaa Firebase (Locking mechanism)
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        // Firebase ayaa halkan qofka cusub ku diwaangelinaysa
+        await createUserWithEmailAndPassword(auth, email, password);
         
-        // 3. Farriinta guusha (Confirmation)
-        alert("Hambalyo! Ciwaankaaga si guul leh ayaa loogu kaydiyay nidaamka. ✅");
+        alert("Hambalyo! Si guul leh ayaad u isku diwaangelisay. ✅");
 
-        // 4. Hadda uun u kaxee bogga nadiifta ah ee index.html
-        window.location.href = "https://moohan821-ui.github.io/seemore/index.html";
+        // Halkii URL-ka dheeraa ahaan lahaa, kan nadiifka ah isticmaal:
+        window.location.href = "index.html";
 
     } catch (error) {
-        // Haddii Gmail-ku horay u jiray ama password-ku yar yahay
-        alert("Cillad: " + error.message);
+        alert("Cillad: Email-kan horay ayaa loo isticmaalay ama Password-ka ayaa daciif ah! ❌");
     }
 });
+
   // 4. Koodka Isha (Toggle Password) - Isna halkan geli
   const togglePassword = document.querySelector('#togglePassword');
   const passwordInput = document.querySelector('#password');
