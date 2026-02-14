@@ -177,22 +177,20 @@
 registrationForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-// 3. Shaqada Register-ka (Sign Up)
-const registerForm = document.getElementById('registrationForm'); // Hubi inuu sax yahay ID-gu
+// Sadarka 180 ee Register.html
+const registrationForm = document.getElementById('registrationForm'); // Hubi 'n' u dambaysa
 
-registerForm.addEventListener('submit', async (e) => {
-    e.preventDefault(); // Jooji in boggu iskiis u refresh-garoobo
+registrationForm.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Hadda kani wuu shaqayn doonaa oo refresh-ka ayuu xiri doonaa
 
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
     try {
-        // Amarka saxda ah ee diwaangelinta
-        await createUserWithEmailAndPassword(auth, email, password);
+        // Hubi in halkan ay ku qoran tahay CREATE ee aysan ahayn SIGNIN
+        await createUserWithEmailAndPassword(auth, email, password); 
         
-        alert("Hambalyo! Si guul leh ayaad u isku diwaangelisay. ✅");
-
-        // Hadda kaxaynta (Redirection) way shaqayn doontaa
+        alert("Hambalyo! Ciwaankaaga si guul leh ayaa loo kaydiyay. ✅");
         window.location.href = "index.html"; 
 
     } catch (error) {
