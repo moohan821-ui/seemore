@@ -51,11 +51,22 @@
 <a class="text-sm font-semibold hover:text-primary transition-colors" href="#">Products</a>
 <a class="text-sm font-semibold hover:text-primary transition-colors" href="#">About</a>
 </div>
-<a href="login.html" class="px-6 py-2.5 text-sm font-bold text-primary border-2 border-primary/20 hover:border-primary rounded-full inline-block text-center">
-  Login
-</a>
-<a href="register.html" class="px-6 py-2.5 text-sm font-bold text-white bg-primary hover:shadow-lg hover:shadow-primary/30 rounded-full inline-block text-center">
-  Register
+<div class="flex items-center gap-2">
+    <div id="guest-area" class="flex gap-2">
+        <a href="login.html" class="px-6 py-2.5 text-sm font-bold text-primary border-2 border-primary/20 hover:border-primary rounded-full transition-all">
+            Login
+        </a>
+        <a href="register.html" class="px-6 py-2.5 text-sm font-bold text-white bg-primary hover:shadow-lg rounded-full transition-all">
+            Register
+        </a>
+    </div>
+
+    <div id="user-area" class="hidden flex items-center gap-4">
+        <span id="display-email" class="text-sm font-semibold text-primary"></span>
+        <button id="logout-btn" class="px-6 py-2.5 text-sm font-bold text-white bg-red-500 hover:bg-red-600 rounded-full transition-all">
+            Logout
+        </button>
+    </div>
 </a>
 </div>
 </div>
@@ -280,4 +291,48 @@
 </div>
 </div>
 </footer>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-auth.js";
+
+  // Hubi in Config-gaagu la mid yahay kii Login.html
+  const firebaseConfig = {
+    apiKey: "AIzaSyCk4S0S7dvZrTN6q4oISLIWIXZNtHXRrvk",
+    authDomain: "my-websade.firebaseapp.com",
+    projectId: "my-websade",
+    storageBucket: "my-websade.firebasestorage.app",
+    messagingSenderId: "34681878474",
+    appId: "1:34681878474:web:5d11bb422bf74008cdc133"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  const guestArea = document.getElementById('guest-area');
+  const userArea = document.getElementById('user-area');
+  const displayEmail = document.getElementById('display-email');
+  const logoutBtn = document.getElementById('logout-btn');
+
+  // Nidaamka Falanqaynta (Authentication Check)
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // QOFKA WAA LOGIN:
+      guestArea.style.display = 'none';      // Qari Login/Register
+      userArea.classList.remove('hidden');   // Tus Email/Logout
+      userArea.style.display = 'flex';
+      displayEmail.textContent = user.email; // Soo qor email-kiisa
+    } else {
+      // QOFKU MA SOO GELIN:
+      guestArea.style.display = 'flex';      // Tus Login/Register
+      userArea.style.display = 'none';       // Qari Email/Logout
+    }
+  });
+
+  // Shaqada Batoonka Logout
+  logoutBtn.addEventListener('click', () => {
+    signOut(auth).then(() => {
+      window.location.reload(); // Markuu Logout dhaho bogga dib u cusboonaysii
+    });
+  });
+</script>
 </body></html>
