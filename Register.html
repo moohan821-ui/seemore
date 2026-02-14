@@ -177,26 +177,26 @@
 registrationForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    // 3. Shaqada Register-ka (Sign Up)
-const registerForm = document.getElementById('registrationForm'); // Hubi inuu la mid yahay ID-ga HTML-ka
+// 3. Shaqada Register-ka (Sign Up)
+const registerForm = document.getElementById('registrationForm'); // Hubi inuu sax yahay ID-gu
 
 registerForm.addEventListener('submit', async (e) => {
-    e.preventDefault(); // Jooji in URL-ku iskiis u cararo
+    e.preventDefault(); // Jooji in boggu iskiis u refresh-garoobo
 
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
     try {
-        // Firebase ayaa halkan qofka cusub ku diwaangelinaysa
+        // Amarka saxda ah ee diwaangelinta
         await createUserWithEmailAndPassword(auth, email, password);
         
         alert("Hambalyo! Si guul leh ayaad u isku diwaangelisay. ✅");
 
-        // Halkii URL-ka dheeraa ahaan lahaa, kan nadiifka ah isticmaal:
-        window.location.href = "index.html";
+        // Hadda kaxaynta (Redirection) way shaqayn doontaa
+        window.location.href = "index.html"; 
 
     } catch (error) {
-        alert("Cillad: Email-kan horay ayaa loo isticmaalay ama Password-ka ayaa daciif ah! ❌");
+        alert("Cillad: " + error.message);
     }
 });
 
