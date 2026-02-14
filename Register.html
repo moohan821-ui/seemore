@@ -174,35 +174,34 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
-
-  // 3. Marka qofku rixo batoonka "Create Account"
-  const registrationForm = document.getElementById('registrationForm');
-  registrationForm.addEventListener('submit', (e) => {
+// 3. Shaqada Register-ka
+registrationForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     const confirmPassword = document.getElementById('confirm-password').value;
 
-    // 1. Hubi haddii password-yadu is leeyihiin
+    // 1. Hubi haddii labada password ay is leeyihiin
     if (password !== confirmPassword) {
-        alert("Fadlan iska hubi, baasboorka isma laha!");
+        alert("Cillad: Labada Password isma laha! ❌");
         return;
     }
 
-    // 2. U dir xogta Google Firebase
-    createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            // CADAYN: Farriintan waxay muujinaysaa in xogta gacanta lagu dhigay
-            alert("Hambalyo! Ciwaankaaga si guul leh ayaa loogu kaydiyay nidaamka. ✅");
-            
-            // GUDBIN: Hadda u kaxee bogga Home-ka (index.html)
-            window.location.href = "https://moohan821-ui.github.io/seemore/index.html"; 
-        })
-        .catch((error) => {
-            // Haddii email-ku hore u jiray ama cillad kale dhacdo
-            alert("Cillad: " + error.message);
-        });
+    try {
+        // 2. KALIYA halkan ayaa xogta loogu dirayaa Firebase (Locking mechanism)
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        
+        // 3. Farriinta guusha (Confirmation)
+        alert("Hambalyo! Ciwaankaaga si guul leh ayaa loogu kaydiyay nidaamka. ✅");
+
+        // 4. Hadda uun u kaxee bogga nadiifta ah ee index.html
+        window.location.href = "https://moohan821-ui.github.io/seemore/index.html";
+
+    } catch (error) {
+        // Haddii Gmail-ku horay u jiray ama password-ku yar yahay
+        alert("Cillad: " + error.message);
+    }
 });
   // 4. Koodka Isha (Toggle Password) - Isna halkan geli
   const togglePassword = document.querySelector('#togglePassword');
