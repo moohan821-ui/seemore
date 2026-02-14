@@ -53,14 +53,15 @@
 </div>
 <div class="flex items-center gap-2">
     <div id="guest-area" class="flex gap-2">
-        <a href="https://moohan821-ui.github.io/seemore/Login.html" class="px-6 py-2.5 text-sm font-bold text-primary border-2 border-primary/20 hover:border-primary rounded-full transition-all">
-            Login
-        </a>
-        <a href="https://moohan821-ui.github.io/seemore/Register.html" class="px-6 py-2.5 text-sm font-bold text-white bg-primary hover:shadow-lg rounded-full transition-all">
-            Register
-        </a>
-    </div>
-
+        <div id="guest-area" class="flex gap-2">
+    <a href="Login.html" class="px-6 py-2.5 text-sm font-bold text-primary border border-primary/20 rounded-full hover:bg-primary/5 transition-all">
+        Login
+    </a>
+    <a href="Register.html" class="px-6 py-2.5 text-sm font-bold text-white bg-primary hover:bg-primary/90 rounded-full shadow-lg shadow-primary/20 transition-all">
+        Register
+    </a>
+</div>
+            
     <div id="user-area" class="hidden flex items-center gap-4">
         <span id="display-email" class="text-sm font-semibold text-primary"></span>
         <button id="logout-btn" class="px-6 py-2.5 text-sm font-bold text-white bg-red-500 hover:bg-red-600 rounded-full transition-all">
@@ -331,8 +332,9 @@
   // Shaqada Batoonka Logout
   logoutBtn.addEventListener('click', () => {
     signOut(auth).then(() => {
-      window.location.reload(); // Markuu Logout dhaho bogga dib u cusboonaysii
+        // Markuu Logout dhaho bogga dib u cusboonaysii si Guest-area u soo laabato
+        window.location.href = "index.html"; 
     });
-  });
+});
 </script>
 </body></html>
