@@ -52,22 +52,21 @@
 <a class="text-sm font-semibold hover:text-primary transition-colors" href="#">About</a>
 </div>
 <div class="flex items-center gap-2">
-    <div id="guest-area" class="flex gap-2">
-        <div id="guest-area" class="flex gap-2">
+    <div id="guest-area" style="display: none;" class="flex items-center gap-2">
     <a href="Login.html" class="px-6 py-2.5 text-sm font-bold text-primary border border-primary/20 rounded-full hover:bg-primary/5 transition-all">
         Login
     </a>
-    <a href="Register.html" class="px-6 py-2.5 text-sm font-bold text-white bg-primary hover:bg-primary/90 rounded-full shadow-lg shadow-primary/20 transition-all">
+    <a href="Register.html" class="px-6 py-2.5 text-sm font-bold text-white bg-primary rounded-full hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all">
         Register
     </a>
 </div>
-            
-    <div id="user-area" class="hidden flex items-center gap-4">
-        <span id="display-email" class="text-sm font-semibold text-primary"></span>
-        <button id="logout-btn" class="px-6 py-2.5 text-sm font-bold text-white bg-red-500 hover:bg-red-600 rounded-full transition-all">
-            Logout
-        </button>
-    </div>
+
+<div id="user-area" style="display: none;" class="flex items-center gap-4">
+    <span id="display-email" class="text-sm font-semibold text-primary"></span>
+    <button id="logoutBtn" class="px-6 py-2.5 text-sm font-bold text-white bg-red-500 rounded-full hover:bg-red-600 shadow-lg shadow-red-200 transition-all">
+        Logout
+    </button>
+</div>
 </a>
 </div>
 </div>
@@ -312,29 +311,27 @@
   const guestArea = document.getElementById('guest-area');
   const userArea = document.getElementById('user-area');
   const displayEmail = document.getElementById('display-email');
-  const logoutBtn = document.getElementById('logout-btn');
+  const logoutBtn = document.getElementById('logout-Btn');
 
   // Nidaamka Falanqaynta (Authentication Check)
-  onAuthStateChanged(auth, (user) => {
+  // Nidaamka Falanqaynta (Authentication Check)
+onAuthStateChanged(auth, (user) => {
     if (user) {
-      // QOFKA WAA LOGIN:
-      guestArea.style.display = 'none';      // Qari Login/Register
-      userArea.classList.remove('hidden');   // Tus Email/Logout
-      userArea.style.display = 'flex';
-      displayEmail.textContent = user.email; // Soo qor email-kiisa
+        // QOFKA WAA LOGIN:
+        guestArea.style.display = 'none';      // Qari Login/Register
+        userArea.style.display = 'flex';       // Tus Email/Logout
+        displayEmail.textContent = user.email; // Soo qor email-kiisa
     } else {
-      // QOFKU MA SOO GELIN:
-      guestArea.style.display = 'flex';      // Tus Login/Register
-      userArea.style.display = 'none';       // Qari Email/Logout
+        // QOFKU MA SOO GELIN:
+        guestArea.style.display = 'flex';      // Tus Login/Register
+        userArea.style.display = 'none';       // Qari Email/Logout
     }
-  });
-
-  // Shaqada Batoonka Logout
-  logoutBtn.addEventListener('click', () => {
+});
+        logoutBtn.addEventListener('click', () => {
     signOut(auth).then(() => {
-        // Markuu Logout dhaho bogga dib u cusboonaysii si Guest-area u soo laabato
         window.location.href = "index.html"; 
     });
 });
+
 </script>
 </body></html>
