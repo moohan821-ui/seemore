@@ -173,23 +173,24 @@
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
-// 3. Shaqada Register-ka
-registrationForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
+// 3. Shaqada Register-ka (Sign Up)
+const regForm = document.getElementById('registrationForm');
 
-// Sadarka 180 ee Register.html
-const registrationForm = document.getElementById('registrationForm'); // Hubi 'n' u dambaysa
-
-registrationForm.addEventListener('submit', async (e) => {
-    e.preventDefault(); // Hadda kani wuu shaqayn doonaa oo refresh-ka ayuu xiri doonaa
+regForm.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Kani waa kan refresh-ka joojinaya
 
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
+    const confirmPassword = document.getElementById('confirm-password').value;
+
+    // Hubi haddii password-yadu is leeyihiin
+    if (password !== confirmPassword) {
+        alert("Cillad: Password-yada aad galisay isma lahan! ❌");
+        return;
+      }
 
     try {
-        // Hubi in halkan ay ku qoran tahay CREATE ee aysan ahayn SIGNIN
-        await createUserWithEmailAndPassword(auth, email, password); 
-        
+        await createUserWithEmailAndPassword(auth, email, password);
         alert("Hambalyo! Ciwaankaaga si guul leh ayaa loo kaydiyay. ✅");
         window.location.href = "index.html"; 
 
@@ -210,24 +211,6 @@ registrationForm.addEventListener('submit', async (e) => {
   });
 </script>
 
-});
-</script>
-<script>
-    const togglePassword = document.querySelector('#togglePassword');
-const passwordInput = document.querySelector('#password');
-const eyeIcon = document.querySelector('#eyeIcon');
-
-togglePassword.addEventListener('click', function () {
-    // 1. Bedel nooca input-ka (u kala bedel 'password' iyo 'text')
-    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-    passwordInput.setAttribute('type', type);
-    
-    // 2. Bedel icon-ka isha
-    if (type === 'password') {
-        eyeIcon.textContent = 'visibility_off'; // Isha oo xiran
-    } else {
-        eyeIcon.textContent = 'visibility';     // Isha oo furan
-    }
 });
 
 </script>
