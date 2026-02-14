@@ -145,7 +145,7 @@
 </div>
 <p class="mt-10 text-center text-sm text-background-dark/60 dark:text-white/60">
                     Don't have an account? 
-                    <a class="text-primary font-bold hover:underline underline-offset-4 ml-1" href="https://moohan821-ui.github.io/seemore/Register.html">Register here</a>
+                    <a class="text-primary font-bold hover:underline underline-offset-4 ml-1" href="Register.html">Register here</a>
 </p>
 </div>
 </div>
@@ -174,36 +174,26 @@
   // Bilaaw Firebase
   const app = initializeApp(firebaseConfig);
   const auth = getAuth(app);
+// 3. Shaqada Login-ka (Sign In)
+const loginForm = document.getElementById('loginForm');
 
-  // 3. Shaqada Login-ka (Sign In)
-  // Waxaan raadinaynaa Form-ka Login-ka
-const loginForm = document.getElementById('loginForm'); // Maadaama uu hal form yahay
-    // 3. Shaqada Login-ka (Nidaamka rasmiga ah ee Ammaanka)
-  loginForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
+loginForm.addEventListener('submit', async (e) => {
+    e.preventDefault(); // Waxay joojinaysaa in URL-ku iskiis u cararo
 
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
     try {
-        // 1. Firebase halkan ayay ku xannibaysaa qofka ilaa ay xogta hubiso
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
-        
-        // 2. KALIYA haddii xogtu sax tahay ayuu halkan soo gaarayaa
         alert("Hambalyo! Si guul leh ayaad u soo gashay. ✅");
         
-        // 3. Marka uu baasboorku sax yahay kaliya u kaxee index.html
-        window.location.href = "https://moohan821-ui.github.io/seemore/index.html"; 
+        // Halkii URL-ka dheeraa ahaan lahaa, kan kaliya isticmaal:
+        window.location.href = "index.html"; 
 
     } catch (error) {
-        // 4. Haddii Gmail-ku jirin ama Password-ku khaldan yahay
         alert("Cillad: Email-ka ama Password-ka aad galisay waa khaldan yahay! ❌");
-        console.error("Ciladda Firebase: ", error.message);
     }
 });
-  
-  });
-
   // 4. Shaqada Isha (Toggle Password)
   const toggleBtn = document.querySelector('button[type="button"]'); // Batoonka isha
   const passwordInput = document.getElementById('password');
