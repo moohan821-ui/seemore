@@ -179,31 +179,28 @@
   // Waxaan raadinaynaa Form-ka Login-ka
   const loginForm = document.querySelector('form'); // Maadaama uu hal form yahay
     // 3. Shaqada Login-ka (Nidaamka rasmiga ah ee Ammaanka)
-  loginForm.addEventListener('submit', async (e) => { // Waxaan ku darnay async
+  loginForm.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
     try {
-        // 1. Sug inta Google ay ka xaqiijinayso xogta
+        // 1. Firebase halkan ayay ku xannibaysaa qofka ilaa ay xogta hubiso
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         
-        // 2. Haddii ay sax tahay, farriin sii
-        alert("Hambalyo! Si guul leh ayaad u soo gashay.");
+        // 2. KALIYA haddii xogtu sax tahay ayuu halkan soo gaarayaa
+        alert("Hambalyo! Si guul leh ayaad u soo gashay. ✅");
         
-        // 3. Markaas ka dib u wareeji bogga Home (index.html)
-        window.location.href = "https://moohan821-ui.github.io/seemore/index.html"; 
+        // 3. Marka uu baasboorku sax yahay kaliya u kaxee index.html
+        window.location.href = "index.html"; 
 
     } catch (error) {
-        // Haddii password-ku khaldan yahay ama email-ku uusan jirin
-        let message = "Email-ka ama Password-ka ayaa khaldan!";
-        if (error.code === 'auth/network-request-failed') {
-            message = "Internet-kaaga ayaa daciif ah!";
-        }
-        alert("Cillad: " + message);
+        // 4. Haddii Gmail-ku jirin ama Password-ku khaldan yahay
+        alert("Cillad: Email-ka ama Password-ka aad galisay waa khaldan yahay! ❌");
+        console.error("Ciladda Firebase: ", error.message);
     }
-  });
+});
   
   });
 
